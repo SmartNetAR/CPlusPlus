@@ -1,0 +1,15 @@
+inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited Button1: TButton
+    Position.X = 16.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Nuevo Juego'
+  end
+  inherited ImageList1: TImageList
+    Left = 16
+    Top = 208
+  end
+end

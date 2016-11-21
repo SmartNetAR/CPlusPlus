@@ -1,0 +1,25 @@
+﻿  arbolito.cpp
+c:\temp\git\cplusplus\vs\arbolito\arbolito\arbol.h(43): error C2059: error de sintaxis: '{'
+  c:\temp\git\cplusplus\vs\arbolito\arbolito\arbol.h(30): note: durante la compilación de la función miembro de plantilla de clase 'void Tree<int>::InsertPri(Node<T> *&,T)'
+          with
+          [
+              T=int
+          ]
+  c:\temp\git\cplusplus\vs\arbolito\arbolito\arbol.h(57): note: vea la referencia a la creación de instancias de plantilla de función 'void Tree<int>::InsertPri(Node<T> *&,T)' que se está compilando
+          with
+          [
+              T=int
+          ]
+  c:\temp\git\cplusplus\vs\arbolito\arbolito\arbol.h(56): note: durante la compilación de la función miembro de plantilla de clase 'void Tree<int>::Insert(T)'
+          with
+          [
+              T=int
+          ]
+  c:\temp\git\cplusplus\vs\arbolito\arbolito\arbolito.cpp(11): note: vea la referencia a la creación de instancias de plantilla de función 'void Tree<int>::Insert(T)' que se está compilando
+          with
+          [
+              T=int
+          ]
+  c:\temp\git\cplusplus\vs\arbolito\arbolito\arbolito.cpp(10): note: vea la referencia a la creación de instancias de plantilla de clase 'Tree<int>' que se está compilando
+c:\temp\git\cplusplus\vs\arbolito\arbolito\arbol.h(43): error C2143: error de sintaxis: falta ';' delante de '{'
+c:\temp\git\cplusplus\vs\arbolito\arbolito\arbol.h(50): error C2181: 'else' no válido sin el correspondiente 'if'

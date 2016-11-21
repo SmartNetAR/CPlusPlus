@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1475023182 source:c:\temp\lista\lista\main.cpp
+	<iostream>
+	"list.h"
+
+1475023116 c:\temp\lista\lista\include\list.h
+
+1475031737 source:c:\temp\cplusplus\lista\main.cpp
+	<iostream>
+	"List.h"
+
+1475023116 c:\temp\cplusplus\lista\include\list.h
+
+1475023408 source:c:\temp\cplusplus\lista\src\list.cpp
+	"list.h"
+
+1475030163 c:\temp\cplusplus\lista\tlist.h
+
+1475031687 c:\temp\cplusplus\lista\list.h
+
+1475622259 source:d:\git\lista\main.cpp
+	<iostream>
+	"List.h"
+
+1475630656 d:\git\lista\list.h
+

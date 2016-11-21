@@ -1,0 +1,28 @@
+//---------------------------------------------------------------------------
+
+#ifndef JuegoH
+#define JuegoH
+	enum { MAXLEN = 30 } ;
+	//const int MAXLEN = 30 ;
+	class Juego {
+		private:
+			int nivel ;
+
+
+		public:
+			Juego () ;
+			int getNivel ( ) ;
+			void setNivel ( int Nivel )  ;
+
+	};
+
+	int Juego::getNivel ( ) {
+		return nivel;
+	}
+
+	void Juego::setNivel ( int Nivel ) {
+		nivel = Nivel ;
+    }
+
+//---------------------------------------------------------------------------
+#endif

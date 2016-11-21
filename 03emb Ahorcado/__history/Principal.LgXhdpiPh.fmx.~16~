@@ -1,0 +1,25 @@
+inherited frmPrincipal_LgXhdpiPh: TfrmPrincipal_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited Glyph1: TGlyph
+    Position.X = 87.000000000000000000
+  end
+  inherited gLetras: TGroupBox
+    Position.Y = 542.000000000000000000
+    Size.Width = 450.000000000000000000
+  end
+  inherited gNivel: TGroupBox
+    inherited btnNivel3: TButton
+      Position.X = -8.000000000000000000
+    end
+  end
+  inherited lblAyuda: TLabel
+    Position.Y = 176.000000000000000000
+    Size.Width = 329.000000000000000000
+  end
+  inherited ePalabra: TEdit
+    Position.X = 12.000000000000000000
+    Position.Y = 177.000000000000000000
+  end
+end

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1477674358 source:c:\temp\git\cplusplus\hilos\threads\main.cpp
+	<iostream>
+	"Windows.h"
+	<conio.h>
+
