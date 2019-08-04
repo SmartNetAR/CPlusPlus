@@ -1,0 +1,86 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "g++ build active file and Run",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-std=c++14",
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.out"
+      ],
+      "options": {
+        "cwd": "/usr/bin"
+      },
+      "presentation": {
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    /* {
+      "label": "run",
+      "type": "shell",
+      "command": "${workspaceFolder}/${fileBasenameNoExtension}.out",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOn": [
+        "g++ build active file and Run"
+      ],
+      "presentation": {
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "problemMatcher": []
+    }, */
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "${workspaceFolder}/${fileBasenameNoExtension}.out",
+      "args": [
+        "--reporter", 
+        "compact",
+        "--success"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOn": [
+        "g++ build active file and Run"
+      ],
+      "presentation": {
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "g++ build active file",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "/usr/bin"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ]
+}
