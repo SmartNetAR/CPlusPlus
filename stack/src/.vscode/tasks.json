@@ -14,11 +14,9 @@
       "command": "make",
       "args": [
         "test"
-        // "${fileDirname}",
-        // "make",
       ],
       "options": {
-        "cwd": "/Volumes/ssdData/code en ssdData/cpp/isft151/estructuras/stack/src/test" //"${workspaceRoot}"
+        "cwd": "/Volumes/ssdData/code en ssdData/cpp/isft151/estructuras/stack/src/test"
       },
       "group": {
         "kind": "build",
@@ -26,9 +24,10 @@
       },
       "presentation": {
         "panel": "shared",
+        "focus": true,
         "showReuseMessage": false,
         "clear": false
-      },
+      }
     }
   ]
 }

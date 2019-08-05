@@ -30,7 +30,17 @@ SCENARIO( "Stack puede apilar", "" ) {
             Type item2 = s->pop() ;
             THEN( "debería obtener un 9 y un 5" ) {
                 REQUIRE( item1 == 9 ) ;
-                REQUIRE( item1 == 5 ) ;
+                REQUIRE( item2 == 5 ) ;
+            }
+        }
+        WHEN( "Cuando apilo un 6 y un 7 y consulto el último dos veces") {
+            s->push( 6 ) ;
+            s->push( 7 ) ;
+            auto item1 = s->peek() ;
+            auto item2 = s->peek() ;
+            THEN( "debería obtener un 7 ambas veces" ) {
+                REQUIRE( item1 == 7 ) ;
+                REQUIRE( item2 == 7 ) ;
             }
         }
     }
