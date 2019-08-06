@@ -18,15 +18,17 @@ public:
 
 private:
   Type* rep ;
-  unsigned int queueCapacity ;
-  int top ;
+  unsigned int size ;
+  int front ;
+  int rear ;
   unsigned int count ;
+  bool isEmpty() ;
 };
 
 Queue::Queue( unsigned int itsCapacity )
-  :rep( nullptr ), queueCapacity( itsCapacity ), top( -1 ), count( 0 )
+  :rep( nullptr ), size( itsCapacity ), front( -1 ), rear( -1 ), count( 0 )
 {
-  rep = new Type[ queueCapacity ] ;
+  rep = new Type[ size ] ;
 }
 
 Queue::~Queue()
@@ -35,18 +37,30 @@ Queue::~Queue()
 }
 
 Type Queue::enqueue( const Type& item ) {
-  rep[ ++top ] = item ;
+  if ( rear == -1) {
+    front = 0 ;
+    rear = 0 ;
+  } else {
+    rear++ ;
+  }
   count++ ;
-  return rep[ top ] ;
+  return rep[ rear ] = item ;
 }
 
-Type Queue::dequeue( ) {
-  count-- ;
-  return rep[ top-- ] ;
+Type Queue::dequeue() {
+  if ( !isEmpty() ) {
+    count-- ;
+    return rep[ front++ ] ;
+  }
 }
 
-Type Queue::peek( ) {
-  return rep[ top ] ;
+Type Queue::peek() {
+  if ( !isEmpty() ) {
+    return rep[ front ] ;
+  }
 }
 
+bool Queue::isEmpty() {
+  return count == 0 ;
+}
 #endif
