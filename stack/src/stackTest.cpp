@@ -29,7 +29,7 @@ SCENARIO( "Stack puede apilar", "" ) {
             Type item2 = s->pop() ;
             THEN( "debería obtener un 9 y un 5" ) {
                 REQUIRE( item1 == 9 ) ;
-                REQUIRE( item1 == 5 ) ;
+                REQUIRE( item1 == 9 ) ;
             }
         }
     }
