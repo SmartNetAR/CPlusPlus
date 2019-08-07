@@ -1,21 +1,21 @@
-#ifndef Queue_cpp
-#define Queue_cpp
+#ifndef List_cpp
+#define List_cpp
 
-#ifndef iQueue_h
-# include "iQueue.h"
+#ifndef iList_h
+# include "iList.h"
 #endif
 
-enum { DEFAULT_QUEUE_CAPACITY = 30 } ;
+enum { DEFAULT_LIST_CAPACITY = 30 } ;
 
-class Queue :public iQueue
+class List :public iList
 {
 public:
-  Queue( unsigned int itsCapacity ) ;
-  virtual Type enqueue( const Type& item ) ;
-  virtual Type dequeue() ;
+  List( unsigned int itsCapacity ) ;
+  virtual Type append( const Type& item ) ;
+  virtual Type pop() ;
   virtual Type peekFront() ; 
   virtual Type peekBack() ; 
-  ~Queue();
+  ~List();
 
 private:
   Type* rep ;
@@ -26,18 +26,18 @@ private:
   bool isEmpty() ;
 };
 
-Queue::Queue( unsigned int itsCapacity )
+List::List( unsigned int itsCapacity )
   :rep( nullptr ), size( itsCapacity ), front( -1 ), rear( -1 ), count( 0 )
 {
   rep = new Type[ size ] ;
 }
 
-Queue::~Queue()
+List::~List()
 {
   if( rep ) delete [] rep ;
 }
 
-Type Queue::enqueue( const Type& item ) {
+Type List::append( const Type& item ) {
   if ( rear == -1) {
     front = 0 ;
     rear = 0 ;
@@ -48,26 +48,26 @@ Type Queue::enqueue( const Type& item ) {
   return rep[ rear ] = item ;
 }
 
-Type Queue::dequeue() {
+Type List::pop() {
   if ( !isEmpty() ) {
     count-- ;
     return rep[ front++ ] ;
   }
 }
 
-Type Queue::peekFront() {
+Type List::peekFront() {
   if ( !isEmpty() ) {
     return rep[ front ] ;
   }
 }
 
-Type Queue::peekBack() {
+Type List::peekBack() {
   if ( !isEmpty() ) {
     return rep[ rear ] ;
   }
 }
 
-bool Queue::isEmpty() {
+bool List::isEmpty() {
   return count == 0 ;
 }
 #endif

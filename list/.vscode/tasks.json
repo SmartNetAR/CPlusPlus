@@ -1,0 +1,58 @@
+// Makefile
+// ${workspaceRoot} the path of the folder opened in VS Code
+// ${file} the current opened file
+// ${fileBasename} the current opened file's basename
+// ${fileDirname} the current opened file's dirname
+// ${fileExtname} the current opened file's extension
+// ${cwd} the task runner's current working directory on startup
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "test"
+      ],
+      "options": {
+        "cwd": "${workspaceRoot}" //"/Volumes/ssdData/code en ssdData/cpp/isft151/estructuras/stack/src/test"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "panel": "shared",
+        "focus": true,
+        "showReuseMessage": false,
+        "clear": false
+      }
+    }
+  ]
+}
+
+// {
+//   // See https://go.microsoft.com/fwlink/?LinkId=733558 
+//   // for the documentation about the tasks.json format
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "type": "shell",
+//       "label": "clang build active file",
+//       "command": "/usr/bin/clang",
+//       "args": [
+//         "-g",
+//         "${file}",
+//         "-o",
+//         "${fileDirname}/${fileBasenameNoExtension}"
+//       ],
+//       "options": {
+//         "cwd": "/usr/bin"
+//       },
+//       "problemMatcher": [
+//         "$gcc"
+//       ]
+//     }
+//   ]
+// }
