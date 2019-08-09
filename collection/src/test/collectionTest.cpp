@@ -7,6 +7,7 @@
 SCENARIO( "Collection puede agregar palabras", "" ) {
     GIVEN( "Mientras haya una palabra en el texto obtenerla y procesarla" ) {
         Word word ;
+        unsigned count = 0 ;
         WHEN( "haya una palabra en el texto obtenerla y procesarla") {
             word = getWordFromText() ;
             // int item = l.append( 5 );
@@ -14,6 +15,7 @@ SCENARIO( "Collection puede agregar palabras", "" ) {
             THEN( "debería obtener un 5" ) {
                 while( !( word.isNull() )) {
                     process( word ) ;
+                    count++ ;
                     word = getWordFromText() ;
                 }
                 // REQUIRE( item == 5 ) ;
