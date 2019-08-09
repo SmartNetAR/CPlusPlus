@@ -7,7 +7,7 @@
 SCENARIO( "Collection puede agregar palabras", "" ) {
     GIVEN( "Mientras haya una palabra en el texto obtenerla y procesarla" ) {
         Word word ;
-        WHEN( "Agrego solo un 5, la propia función devuelve el item") {
+        WHEN( "haya una palabra en el texto obtenerla y procesarla") {
             word = getWordFromText() ;
             // int item = l.append( 5 );
             // Type item = l->pop() ;
