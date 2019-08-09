@@ -2,7 +2,7 @@ BIN := bin
 SRC := src
 SRC_TEST := src/test
 OBJ := obj
-CFLAGS := -std=c++14 -Wall
+CFLAGS := -std=c++14
 
 INCLUDE := -I../
 
