@@ -1,5 +1,5 @@
-#ifndef Collection_cpp
-#define Collection_cpp
+#ifndef ContarPalabras_cpp
+#define ContarPalabras_cpp
 
 #include <iostream>
 
