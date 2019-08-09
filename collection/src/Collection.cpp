@@ -54,7 +54,7 @@ bool contain( SetOfChar set, char ch ) {
 }
 
 Word getWordFromText( void ) {
-  enum States { idle, working } ;
+  enum States { idle, working, ending } ;
   static States state = idle ;
  
   // Word word = "" ;
@@ -64,8 +64,7 @@ Word getWordFromText( void ) {
     if ( state == idle ) {
       char ch = std::cin.get() ;
       if ( contain( endOfText, ch ) ) {
-        done = true ;
-        state = idle ;
+        state = ending ;
       } else if ( contain( alphabet, ch ) ) {
         // word = word + ch ;
         word = word.concat( ch ) ;
@@ -77,7 +76,7 @@ Word getWordFromText( void ) {
       char ch = std::cin.get() ;
       if ( contain( endOfText, ch ) ) {
         done = true ;
-        state = idle ;
+        state = ending ;
       } else if ( contain( alphabet, ch ) ) {
         // word = word + ch ;
         word = word.concat( ch ) ;
@@ -86,10 +85,11 @@ Word getWordFromText( void ) {
         done = true ;
         state = idle ;
       }
+    } else if( state == ending ) {
+      done = true ;
+      state = idle ;
     }
   }
-  
-
   return word ;
 }
 
