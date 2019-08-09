@@ -13,10 +13,27 @@ struct Word {
     return items[ 0 ] == '\0' ;
   }
 
+  void init ( const char* plainString = "" ) {
+    strcpy( items, plainString ) ;
+  }
+
   const char* c_string( void ) {
     // cout necesita la dirección del primer caracter del arreglo. 
     return &( items[ 0 ] ) ; // items
   }
+
+  Word& concat( char ch ) {
+    size_t len = strlen( items ) ;
+    items[ len ] = ch ;
+    items[ len + 1 ] = '\0' ;
+    return *this ;
+  }
+
+  Word& assign( const Word& word ) {
+    strcpy( items, word.items ) ;
+    return *this ;
+  }
+
 } ;
 
 void process ( Word thisWord ) {
@@ -29,11 +46,19 @@ SetOfChar alphabet = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ" 
 SetOfChar delimiter =  " ,;:" ;
 SetOfChar endOfText = "." ;
 
+bool contain( SetOfChar set, char ch ) {
+  size_t cardinal = strlen( set ) ;
+  size_t idx = 0 ;
+  for( ; idx < cardinal && set[ idx ] != ch; idx++ ) ;
+  return ( idx < cardinal ) ;
+}
+
 Word getWordFromText( void ) {
-  enum { idle, working } ;
+  enum States { idle, working } ;
   static States state = idle ;
  
-  Word word ;
+  // Word word = "" ;
+  Word word ; word.init() ;
   bool done = false ;
   while ( !done ) {
     if ( state == idle ) {
@@ -42,7 +67,8 @@ Word getWordFromText( void ) {
         done = true ;
         state = idle ;
       } else if ( contain( alphabet, ch ) ) {
-        word = word + ch ;
+        // word = word + ch ;
+        word = word.concat( ch ) ;
         state = working ;
       } else if ( contain( delimiter, ch ) ) {
         ;
@@ -52,8 +78,9 @@ Word getWordFromText( void ) {
       if ( contain( endOfText, ch ) ) {
         done = true ;
         state = idle ;
-      } else if ( contain( alphabet, chr ) ) {
-        word = word + ch ;
+      } else if ( contain( alphabet, ch ) ) {
+        // word = word + ch ;
+        word = word.concat( ch ) ;
         state = working ;
       } else if ( contain( delimiter, ch ) ) {
         done = true ;
