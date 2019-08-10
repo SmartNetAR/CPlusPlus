@@ -1,6 +1,0 @@
-.\assets\internal\u.mp3
-.\assets\internal\a.mp3
-.\assets\internal\e.mp3
-.\assets\internal\ganaste.mp3
-.\assets\internal\i.mp3
-.\assets\internal\o.mp3
