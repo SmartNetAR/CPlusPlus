@@ -1,16 +1,25 @@
 #include "collection.hpp"
-/* implementar
-static bool allItems( const ItemType& lhs ) ;
-static void simple_loyaut( const ItemType& item ) ;
-*/  
+
+template< class ItemType >
+bool Collection<ItemType>::allItems ( const ItemType& lhs )
+{
+	return true ;
+}
+
+template< class ItemType >
+void Collection<ItemType>::simple_layout( const ItemType& item ) {
+  std::cout << item << " " ;
+}
 //
 // init family functions
 //
 template< class ItemType >
 void Collection<ItemType>::init( void ) {
-  first = 0 ;
+  memset( items, NULL_ITEM, sizeof( ItemType ) * DEFAULT_CAPACITY ) ;
+
+  first = EMPTY ;
   current = nullptr ;
-  last = 0 ;
+  last = EMPTY ;
   count = 0 ;
 
   initialized = true ;

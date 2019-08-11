@@ -29,7 +29,7 @@ struct Collection
   // private helper functions
   //
   static bool allItems( const ItemType& lhs ) ;
-  static void simple_loyaut( const ItemType& item ) ;
+  static void simple_layout( const ItemType& item ) ;
   void add_item( Collection<ItemType>& collection, const ItemType& item ) ;
   Collection<ItemType>& remove_first( Collection<ItemType>& collection ) ;
   Collection<ItemType>& remove_last( Collection<ItemType>& collection ) ;

@@ -19,7 +19,8 @@ OBJECTS_ALL := $(OBJ_SRC) $(OBJ_TEST)
 
 test: $(OBJ_TEST)
 	g++ $(CFLAGS) -o $(BIN)/$@.out $^ $(INCLUDE)
-	$(RM) $(OBJ)/listTest.o #/*lo borro porque sino no recomila Stack.cpp*/
+	$(RM) $(OBJ)/setTest.o # /*lo borro porque sino no recomila Set.cpp*/
+	$(RM) $(OBJ)/collectionTest.o # /*lo borro porque sino no recomila Collection.cpp*/
 	./$(BIN)/$@.out --reporter compact --success
 
 # $(OBJ)/%.o: $(SRC)/%.cpp
