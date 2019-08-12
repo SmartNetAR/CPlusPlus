@@ -19,6 +19,7 @@ OBJECTS_ALL := $(OBJ_SRC) $(OBJ_TEST)
 
 test: $(OBJ_TEST)
 	g++ $(CFLAGS) -o $(BIN)/$@.out $^ $(INCLUDE)
+	$(RM) $(OBJ)/associativeContainerTest.o # /*lo borro porque sino no recomila AssociativeConainer.cpp*/
 	$(RM) $(OBJ)/setTest.o # /*lo borro porque sino no recomila Set.cpp*/
 	$(RM) $(OBJ)/collectionTest.o # /*lo borro porque sino no recomila Collection.cpp*/
 	./$(BIN)/$@.out --reporter compact --success
