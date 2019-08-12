@@ -1,6 +1,10 @@
 #ifndef ContarPalabras_cpp
 #define ContarPalabras_cpp
 
+// #ifndef ansiString_hpp
+// # include "../../collections/src/ansiString.hpp"
+// #endif
+
 #include <iostream>
 
 struct Word {
